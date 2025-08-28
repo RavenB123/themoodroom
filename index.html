@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mood Room</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <a href="#" data-mood="happy">Happy</a>
+        <a href="#" data-mood="sad">Sad</a>
+        <a href="#" data-mood="chill">Chill</a>
+        <a href="#" data-mood="excited">Excited</a>
+        <a href="#" data-mood="mysterious">Mysterious</a>
+    </nav>
+
+    <section id="home">
+        <div id="flashlight"></div>
+        <div class="content">
+            <h1>The Mood Room</h1>
+            <p>Click on a mood to enter its vibe</p>
+        </div>
+    </section>
+
+    <section id="happy" class="hidden">
+        <canvas id="happy-canvas"></canvas>
+        <div class="content">
+            <h1>Happy</h1>
+        </div>
+        <div class="controls-container">
+            <div class="button-row">
+                <button class="breathe-button">Guided Breathing</button>
+                <button class="leave-room">Leave Room</button>
+            </div>
+            <input type="text" class="word-input" placeholder="Type your thoughts...">
+        </div>
+        <div class="breathing-guide">
+            <button class="close-guide">X</button>
+            <div class="breathing-circle"></div>
+            <div class="text"></div>
+        </div>
+    </section>
+
+    <section id="sad" class="hidden">
+        <canvas id="sad-canvas"></canvas>
+        <div class="content">
+            <h1>Sad</h1>
+        </div>
+        <div class="controls-container">
+            <div class="button-row">
+                <button class="breathe-button">Guided Breathing</button>
+                <button class="leave-room">Leave Room</button>
+            </div>
+            <input type="text" class="word-input" placeholder="Type your thoughts...">
+        </div>
+        <div class="breathing-guide">
+            <button class="close-guide">X</button>
+            <div class="breathing-circle"></div>
+            <div class="text"></div>
+        </div>
+    </section>
+
+    <section id="chill" class="hidden">
+        <canvas id="chill-canvas"></canvas>
+        <div class="content">
+            <h1>Chill</h1>
+        </div>
+        <div class="controls-container">
+            <div class="button-row">
+                <button class="breathe-button">Guided Breathing</button>
+                <button class="leave-room">Leave Room</button>
+            </div>
+            <input type="text" class="word-input" placeholder="Type your thoughts...">
+        </div>
+        <div class="breathing-guide">
+            <button class="close-guide">X</button>
+            <div class="breathing-circle"></div>
+            <div class="text"></div>
+        </div>
+    </section>
+
+    <section id="excited" class="hidden">
+        <canvas id="excited-canvas"></canvas>
+        <div class="content">
+            <h1>Excited</h1>
+        </div>
+        <div class="controls-container">
+            <div class="button-row">
+                <button class="breathe-button">Guided Breathing</button>
+                <button class="leave-room">Leave Room</button>
+            </div>
+            <input type="text" class="word-input" placeholder="Type your thoughts...">
+        </div>
+        <div class="breathing-guide">
+            <button class="close-guide">X</button>
+            <div class="breathing-circle"></div>
+            <div class="text"></div>
+        </div>
+    </section>
+
+    <section id="mysterious" class="hidden">
+        <canvas id="mysterious-canvas"></canvas>
+        <div class="content">
+            <h1>Mysterious</h1>
+        </div>
+        <div class="controls-container">
+            <div class="button-row">
+                <button class="breathe-button">Guided Breathing</button>
+                <button class="leave-room">Leave Room</button>
+            </div>
+            <input type="text" class="word-input" placeholder="Type your thoughts...">
+        </div>
+        <div class="breathing-guide">
+            <button class="close-guide">X</button>
+            <div class="breathing-circle"></div>
+            <div class="text"></div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="mood-script.js"></script>
+</body>
+
+</html>
