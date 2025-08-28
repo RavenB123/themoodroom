@@ -74,7 +74,7 @@ function playMusic(mood) {
         currentMusicPlayer.dispose();
     }
 
-    const masterVolume = new Tone.Volume(-20).toDestination();
+    const masterVolume = new Tone.Volume(0).toDestination();
     const masterReverb = new Tone.Reverb({ decay: 2, wet: 0.5 }).connect(masterVolume);
 
     let synth;
@@ -137,32 +137,37 @@ function playMusic(mood) {
             }, ["C4", ["G4", "C5"], "G4", "A4", "A#4"]).start(0);
             currentMusicPlayer = sequence;
             break;
-        case 'mysterious':
-            synth = new Tone.PolySynth(Tone.DuoSynth, {
-                volume: 5,
-                vibratoAmount: 0.5,
-                vibratoRate: 5,
-                harmonicity: 1.5,
-                voice0: {
-                    oscillator: { type: "sawtooth" },
-                    envelope: { attack: 2, decay: 0, sustain: 1, release: 5 }
-                },
-                voice1: {
-                    oscillator: { type: "sine" },
-                    envelope: { attack: 1, decay: 0, sustain: 1, release: 5 }
-                }
-            }).connect(masterReverb);
+       case 'mysterious':
+    synth = new Tone.PolySynth(Tone.DuoSynth, {
+        volume: 5,
+        vibratoAmount: 0.5,
+        vibratoRate: 5,
+        harmonicity: 1.5,
+        voice0: {
+            oscillator: { type: "sawtooth" },
+            envelope: { attack: 2, decay: 0, sustain: 1, release: 5 }
+        },
+        voice1: {
+            oscillator: { type: "sine" },
+            envelope: { attack: 1, decay: 0, sustain: 1, release: 5 }
+        }
+    }).connect(masterReverb);
 
-            sequence = new Tone.Sequence((time, note) => {
-                synth.triggerAttackRelease(note, "2n", time);
-            }, [
-                ["A2", "D3", "E3"],
-                ["G2", "C3", "D3"],
-                ["F2", "A#2", "C3"],
-                ["E2", "A2", "B2"]
-            ], "2n").start(0);
-            currentMusicPlayer = sequence;
-            break;
+    sequence = new Tone.Sequence((time, note) => {
+        synth.triggerAttackRelease(note, "2n", time);
+    }, [
+        ["A2", "D3", "E3"],
+        ["G2", "C3", "D3"],
+        ["F2", "A#2", "C3"],
+        ["E2", "A2", "B2"]
+    ], "2n");
+
+    // Correct placement for looping and starting the sequence
+    sequence.loop = true;
+    sequence.start(0);
+
+    currentMusicPlayer = sequence;
+    break;
     }
 
     Tone.Transport.start();
