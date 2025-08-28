@@ -382,49 +382,40 @@ canvas {
         font-size: 3rem;
     }
 
-    .word-input {
-        width: 80%;
-    }
-
-    .button-row {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
     /* Adjust flashlight for touch input on mobile */
     #flashlight {
         background: radial-gradient(circle 50vmax at center, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.95) 50vmax);
         /* Default to center */
     }
 
+    /* New, more specific mobile styling */
     .controls-container {
-        bottom: 1.5rem;
-    }
-}
-/*
-    -- NEW CODE TO ADD BELOW --
-*/
-@media (max-width: 768px) {
-    .controls-container {
-        position: fixed; /* Use fixed positioning for a sticky bar */
-        top: 0; /* Move it to the top */
-        bottom: auto; /* Remove the bottom positioning */
+        position: fixed;
+        top: 0;
+        bottom: auto;
         width: 100%;
-        padding: 1rem; /* Add padding for spacing */
-        background: rgba(26, 26, 46, 0.8); /* Match the body background with some transparency */
+        padding: 1rem;
+        background: rgba(26, 26, 46, 0.8);
         backdrop-filter: blur(10px);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-        z-index: 10; /* Ensure it stays on top of other content */
+        z-index: 10;
     }
 
-    /* Adjust the input field's width for a better mobile fit */
     .controls-container .word-input {
         width: 90%;
         max-width: none;
     }
 
-    /* Adjust the main content area to avoid being covered by the bar */
+    .controls-container .button-row {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
     .mood-room-content {
-        padding-top: 60px; /* Add top padding equal to the height of the new bar */
+        padding-top: 60px;
+    }
+
+    .word-input {
+        width: 80%;
     }
 }
