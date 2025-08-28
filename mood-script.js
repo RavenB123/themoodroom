@@ -101,7 +101,7 @@ function playMusic(mood) {
                     sustain: 0.2,
                     release: 2
                 },
-                volume: -0
+                volume: 5
             }).connect(masterReverb);
 
             sequence = new Tone.Sequence((time, note) => {
@@ -139,7 +139,7 @@ function playMusic(mood) {
             break;
         case 'mysterious':
             synth = new Tone.PolySynth(Tone.DuoSynth, {
-                volume: -10,
+                volume: 5,
                 vibratoAmount: 0.5,
                 vibratoRate: 5,
                 harmonicity: 1.5,
