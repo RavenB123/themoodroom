@@ -139,7 +139,7 @@ function playMusic(mood) {
             break;
        case 'mysterious':
     synth = new Tone.PolySynth(Tone.DuoSynth, {
-        volume: 5,
+        volume: -10,
         vibratoAmount: 0.5,
         vibratoRate: 5,
         harmonicity: 1.5,
